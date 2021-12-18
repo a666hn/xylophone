@@ -6,7 +6,7 @@ void main() => runApp(const XylophoneApp());
 ButtonStyle _setTextButtonStyle(Color primary, {Color? fontColor}) {
   return TextButton.styleFrom(
     backgroundColor: primary,
-    primary: fontColor ?? Colors.white,
+    primary: fontColor ?? primary,
     textStyle: const TextStyle(
       fontFamily: 'Heebo',
     ),
@@ -26,61 +26,54 @@ class XylophoneApp extends StatelessWidget {
     audio.play('note$soundTrack.wav');
   }
 
+  Expanded _buildKey({required Color color, required int soundTrack}) {
+    return Expanded(
+      child: TextButton(
+        style: _setTextButtonStyle(color),
+        onPressed: () {
+          playAudio(soundTrack);
+        },
+        child: const Text('Click Me'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              TextButton(
-                style: _setTextButtonStyle(Colors.red),
-                onPressed: () {
-                  playAudio(1);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.red,
+                soundTrack: 1,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.orange),
-                onPressed: () {
-                  playAudio(2);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.orange,
+                soundTrack: 2,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.yellow),
-                onPressed: () {
-                  playAudio(3);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.yellow,
+                soundTrack: 3,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.green.shade300),
-                onPressed: () {
-                  playAudio(4);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.green,
+                soundTrack: 4,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.green),
-                onPressed: () {
-                  playAudio(5);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.teal,
+                soundTrack: 5,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.blue),
-                onPressed: () {
-                  playAudio(6);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.blue,
+                soundTrack: 6,
               ),
-              TextButton(
-                style: _setTextButtonStyle(Colors.purple),
-                onPressed: () {
-                  playAudio(7);
-                },
-                child: const Text('Click Me'),
+              _buildKey(
+                color: Colors.purple,
+                soundTrack: 7,
               ),
             ],
           ),
