@@ -30,10 +30,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  audioplayers: ^0.20.1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +61,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -87,3 +89,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Heebo
+      fonts:
+        - asset: assets/fonts/heebo/Heebo-Black.ttf
+        - asset: assets/fonts/heebo/Heebo-Bold.ttf
+        - asset: assets/fonts/heebo/Heebo-ExtraBold.ttf
+        - asset: assets/fonts/heebo/Heebo-ExtraLight.ttf
+        - asset: assets/fonts/heebo/Heebo-Light.ttf
+        - asset: assets/fonts/heebo/Heebo-Medium.ttf
+        - asset: assets/fonts/heebo/Heebo-Regular.ttf
+        - asset: assets/fonts/heebo/Heebo-SemiBold.ttf
+        - asset: assets/fonts/heebo/Heebo-Thin.ttf
